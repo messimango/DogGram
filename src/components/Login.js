@@ -15,7 +15,6 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(loginData)
         
         if(register) {
             dispatch(registered(loginData, navigate))
@@ -39,28 +38,28 @@ const Login = () => {
             {register ? (
                 <form className='register-form' onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="firstName" autoFocous>First Name</label>
-                        <input onChange={handleChange} type="text" className="form-control" id="firstName" required fullwidth name="firstName" />
+                        <label htmlFor="firstName" autoFocus>First Name</label>
+                        <input onChange={handleChange} type="text" className="form-control" id="firstName" required name="firstName" />
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="lastName" autoFocous>Last Name</label>
-                        <input onChange={handleChange} type="text" className="form-control" id="lastName" required fullwidth name="lastName" />
+                        <label htmlFor="lastName" >Last Name</label>
+                        <input onChange={handleChange} type="text" className="form-control" id="lastName" required name="lastName" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password">Password</label>
-                        <input type="password" onChange={handleChange} className="form-control" id="password" required fullwidth name="password" />
+                        <input type="password" onChange={handleChange} className="form-control" id="password" required name="password" />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="cpassword">Confirm Password</label>
-                        <input type="password" onChange={handleChange} className="form-control" id="cpassword" required fullwidth name="cpassword" />
+                        <input type="password" onChange={handleChange} className="form-control" id="cpassword" required name="cpassword" />
                     </div>                    
 
                     <div className="form-group">
-                        <label htmlFor="email" autoFocous>E-mail</label>
-                        <input type="email" onChange={handleChange} className="form-control" id="email" required fullwidth name="email" />
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" onChange={handleChange} className="form-control" id="email" required name="email" />
                     </div>
 
                     <button type='submit' className="btn btn-success">Register</button>

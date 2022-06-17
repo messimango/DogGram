@@ -43,7 +43,8 @@ const Form = ({ setCurrentId, currentId }) => {
                         </label>                
                         <label>Dogs Breed:
                             <input placeholder='Dogs Breed' className="form-control" label="Breed" onChange={(e) => setPostData({ ...postData, breed: e.target.value })} breed="breed" value={postData.breed}></input>
-                        </label>                
+                        </label>  
+                        <br></br>              
                         <label>About:
                             <textarea rows="3" placeholder='Info about picture' className="form-control about" label="About" onChange={(e) => setPostData({ ...postData, about: e.target.value })} about="about" value={postData.about}></textarea>
                         </label> 
@@ -54,9 +55,9 @@ const Form = ({ setCurrentId, currentId }) => {
                         <label>Author:
                             <input placeholder='Author' className="form-control" label="Author" onChange={(e) => setPostData({ ...postData, author: e.target.value })} author="author" value={postData.author}></input>
                         </label>
-
+                        <br></br>
                         <FileBase type="file" multiple={false} onDone={({base64}) => setPostData({ ...postData, image: base64 })}/>
-
+                        <br></br>
                         <button className="btn btn-danger" onClick={clear}>Clear</button>
                         <button className="btn btn-primary" type='submit'>Submit</button>
                     </div>

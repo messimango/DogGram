@@ -21,9 +21,11 @@
   flex-direction: row;
   align-items: center;
   font-family: "Poppins";
+  border: none;
 }
 .title img{
   width: 30%;
+  max-width: 10rem;
 }
 .title h1{
   text-decoration: none;
