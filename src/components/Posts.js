@@ -15,14 +15,13 @@ const Posts = ({ setCurrentId }) => {
         return false;
     }
     
-    console.log(posts)
     return (
         <div className='posts'>
-            {posts.map((post) => (
-                <div className='post shadow p-3 mb-5 bg-white rounded'>
+            {posts.map((post, index) => (
+                <div className='post shadow p-3 mb-5 bg-white rounded' key={index}> 
                     <div className='post-button'>
-                        <button  onClick={() => setCurrentId(post._id)}><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button onClick={() => deleteFinal(post._id)}><i class="fa-solid fa-trash"></i></button>
+                        <button  onClick={() => setCurrentId(post._id)}><i className="fa-solid fa-pen-to-square"></i></button>
+                        <button onClick={() => deleteFinal(post._id)}><i className="fa-solid fa-trash"></i></button>
                     </div>
 
                     <div className='post-content'>
@@ -39,7 +38,7 @@ const Posts = ({ setCurrentId }) => {
                     </div>
                     <div className='post-footer'>
                         <p>{moment(post.date).fromNow()}</p>
-                        <button onClick={() => dispatch(likePost(post._id))}><i class="fa-solid fa-heart"></i>{post.like}</button>
+                        <button onClick={() => dispatch(likePost(post._id))}><i className="fa-solid fa-heart"></i> {post.like}</button>
                         <p>{post.author}</p>
                     </div>
                 </div>

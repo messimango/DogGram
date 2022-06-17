@@ -1,41 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { getPosts } from './actions/posts'
+import React from "react";
+import Navbar from "./components/Navbar";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from './images/logo.jpg'
-import Posts from './components/Posts';
-import Form from './components/Form';
-import Search from './components/Search';
+import Main from "./components/Main";
+import Login from "./components/Login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [currentId, setCurrentId] = useState(null);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getPosts());
-  }, [dispatch]);
 
   return (
-    <div className='App'>
-      <div className="nav shadow p-3 mb-5 bg-white rounded">
-          <div className='title' bg="dark" variant="dark">
-              <img src={logo} />
-              <h1>DogGram</h1>
-          </div>
+    <BrowserRouter>
+      <div className='App'>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<Main />} />
+          <Route path="/login" exact element={<Login />} />
+        </Routes>
       </div>
-
-      <Search />
-
-      <div className='content'>
-      <Form currentId={currentId} setCurrentId={setCurrentId}/>
-      <Posts setCurrentId={setCurrentId}/>
-      </div>
-
-
-
-
-    </div>
+    </BrowserRouter>
   )
 }
 

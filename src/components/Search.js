@@ -5,7 +5,6 @@ const Search = () => {
 
     return (
         <div className='search'>
-            search
         </div>
         
     );
